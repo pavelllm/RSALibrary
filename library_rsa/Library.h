@@ -1,60 +1,60 @@
-#ifndef LIBRARY_H
+п»ї#ifndef LIBRARY_H
 #define LIBRARY_H
 
 
-//число слов
+//С‡РёСЃР»Рѕ СЃР»РѕРІ
 #define L 16 
 
-//младшее слово
+//РјР»Р°РґС€РµРµ СЃР»РѕРІРѕ
 #define LOWORD(T) ((unsigned short)(T))
 
-//старшее слово
+//СЃС‚Р°СЂС€РµРµ СЃР»РѕРІРѕ
 #define HIWORD(T) ((unsigned short)(T>>16))
 
-//получить слово
+//РїРѕР»СѓС‡РёС‚СЊ СЃР»РѕРІРѕ
 #define MAKEWORD(a,b) ((((unsigned short)(a))<<8)+b)
 
 #define MAKEDWORD(a,b) ((((unsigned long)(a))<<16)+b)
 
-//младший байт
+//РјР»Р°РґС€РёР№ Р±Р°Р№С‚
 #define LOBYTE(T) ((unsigned char)(T))
 
-//функция сложения двух чисел
+//С„СѓРЅРєС†РёСЏ СЃР»РѕР¶РµРЅРёСЏ РґРІСѓС… С‡РёСЃРµР»
 unsigned short add(unsigned short * a, unsigned short * b, unsigned short size, unsigned short * c);
 
-//функция вычитания одного числа из другого
+//С„СѓРЅРєС†РёСЏ РІС‹С‡РёС‚Р°РЅРёСЏ РѕРґРЅРѕРіРѕ С‡РёСЃР»Р° РёР· РґСЂСѓРіРѕРіРѕ
 unsigned short sub(unsigned short * a, unsigned short * b, unsigned short size, unsigned short * c);
 
 unsigned short * mul(unsigned short * a, unsigned short size_a, unsigned short * b, unsigned short size_b, unsigned short * c);
 
-//функция сравнения чисел
+//С„СѓРЅРєС†РёСЏ СЃСЂР°РІРЅРµРЅРёСЏ С‡РёСЃРµР»
 int cmp(unsigned short * a, unsigned short * b, unsigned short size);
 
-//функция генерации рандомного длинного числа
+//С„СѓРЅРєС†РёСЏ РіРµРЅРµСЂР°С†РёРё СЂР°РЅРґРѕРјРЅРѕРіРѕ РґР»РёРЅРЅРѕРіРѕ С‡РёСЃР»Р°
 unsigned short * generate(unsigned short * a, unsigned short size);
 
-//функция печати длинного числа 
+//С„СѓРЅРєС†РёСЏ РїРµС‡Р°С‚Рё РґР»РёРЅРЅРѕРіРѕ С‡РёСЃР»Р° 
 void print_result(unsigned short * a, unsigned short size);
 
-//Обнуление длинного числа
+//РћР±РЅСѓР»РµРЅРёРµ РґР»РёРЅРЅРѕРіРѕ С‡РёСЃР»Р°
 void zeroing(unsigned short * number, unsigned short size_number);
 
-//Присвоение a = b
+//РџСЂРёСЃРІРѕРµРЅРёРµ a = b
 void assign(unsigned short * a, unsigned short * b, unsigned short size);
 
-//Умножение длинного числа на слово
+//РЈРјРЅРѕР¶РµРЅРёРµ РґР»РёРЅРЅРѕРіРѕ С‡РёСЃР»Р° РЅР° СЃР»РѕРІРѕ
 unsigned short mul_word(unsigned short * a, unsigned short size_a, unsigned short b, unsigned short * c);
 
-//Деление длинного числа на слово
+//Р”РµР»РµРЅРёРµ РґР»РёРЅРЅРѕРіРѕ С‡РёСЃР»Р° РЅР° СЃР»РѕРІРѕ
 unsigned short div_word(unsigned short * a, unsigned short size, unsigned short b, unsigned short * c, unsigned short * r);
 
-//Деление длинного числа на длинное число
+//Р”РµР»РµРЅРёРµ РґР»РёРЅРЅРѕРіРѕ С‡РёСЃР»Р° РЅР° РґР»РёРЅРЅРѕРµ С‡РёСЃР»Рѕ
 void div(unsigned short * U, unsigned short * V, unsigned short* const Q, unsigned short* const R, unsigned short sizeU, unsigned short sizeV);
 
-//Умножение длинных чисел по модулю
+//РЈРјРЅРѕР¶РµРЅРёРµ РґР»РёРЅРЅС‹С… С‡РёСЃРµР» РїРѕ РјРѕРґСѓР»СЋ
 void mod_mul(unsigned short * a, unsigned short * b, unsigned short * n, unsigned short * c, unsigned long size);
 
-//Возведение длинного числа в степень по модулю
+//Р’РѕР·РІРµРґРµРЅРёРµ РґР»РёРЅРЅРѕРіРѕ С‡РёСЃР»Р° РІ СЃС‚РµРїРµРЅСЊ РїРѕ РјРѕРґСѓР»СЋ
 void mod_pow(unsigned short * a, unsigned long size_a, unsigned short * b, unsigned long size_b, unsigned short * n, unsigned short * c);
 
 void rsa_encrypt(unsigned short * M, unsigned long s, unsigned short * e, unsigned short * n, unsigned short * C, unsigned long k);
